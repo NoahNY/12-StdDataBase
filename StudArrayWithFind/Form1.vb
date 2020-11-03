@@ -51,6 +51,12 @@
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
+        'Validate that the gender field holds "m" of "f"
+        If Not (LCase(txtGender.Text) = "m" Or LCase(txtGender.Text) = "f") Then
+            MsgBox("Please enter 'f' or 'm' ", MsgBoxStyle.Exclamation, "Check Gender field")
+            txtGender.Focus()
+            Exit Sub
+        End If
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
         students(studentCount).firstname = txtFirstName.Text
         students(studentCount).lastname = txtLastName.Text
@@ -60,6 +66,7 @@
         students(studentCount).phoneNo = txtPhone.Text
         students(studentCount).paid = chkPaid.Checked
         studentCount += 1
+
         'return text boxes to blank ready for next entry
         txtFirstName.Text = ""
         txtLastName.Text = ""
@@ -114,6 +121,10 @@
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class
