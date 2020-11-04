@@ -51,12 +51,47 @@
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
-        'Validate that the gender field holds "m" of "f"
+        'VALIDATION:'
+        'Validate if anything has been inputted in the "First Name" box:'
+        If txtFirstName.Text = "" Then
+            MessageBox.Show("Please enter a 'first name'.", "Go to the First Name field and input a name, please!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            txtFirstName.Focus()
+            Exit Sub
+        End If
+
+        'Validate if anything has been inputted in the "Last Name" box:'
+        If txtLastName.Text = "" Then
+            MessageBox.Show("Please enter a 'last name'.", "Go to the Last Name field and input a name, please!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            txtLastName.Focus()
+            Exit Sub
+        End If
+
+        'Validate if actual DoB:'
+        If Not (txtDOB.Text >= #1/1/1998# AndAlso txtDOB.Text < #1/1/2005#) Then
+            MsgBox("Please enter in a DoB between 1960 and 2010 in the format of 'd/mm/yy'", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            txtDOB.Focus()
+            Exit Sub
+        End If
+
+        'Validate that the gender field holds "m" of "f":'
         If Not (LCase(txtGender.Text) = "m" Or LCase(txtGender.Text) = "f") Then
             MsgBox("Please enter 'f' or 'm' ", MsgBoxStyle.Exclamation, "Check Gender field")
             txtGender.Focus()
             Exit Sub
         End If
+
+        If Not IsNumeric(txtAvMk.Text) Then
+            MessageBox.Show("Please enter an 'average mark' (between 0-100).", "Go to the Average Mark field and input a mark, please!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            txtAvMk.Focus()
+            Exit Sub
+        End If
+
+        If Not Len(Trim(txtPhone.Text)) = 10 Then
+            MsgBox("Please enter 10 digits for the phone number", MsgBoxStyle.Exclamation, "Check Phone Number field (10 digits)")
+            txtPhone.Focus()
+            Exit Sub
+        End If
+
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
         students(studentCount).firstname = txtFirstName.Text
         students(studentCount).lastname = txtLastName.Text
