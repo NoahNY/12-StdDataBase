@@ -82,7 +82,7 @@
 
         'Validate if actual DoB:'
         If Not IsDate(txtDOB.Text) Then
-            MsgBox("Please enter in a DoB between 1960 and 2010 in the format of 'd/mm/yy'", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            MsgBox("Please enter in a DoB between 1960 and 2020 in the format of 'd/mm/yy'", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             txtDOB.Focus()
             Exit Sub
         End If
@@ -125,6 +125,8 @@
         txtPhone.Text = ""
         chkPaid.Text = "Paid"
         displayList()
+
+        txtFirstName.Focus()
     End Sub
     Private Sub displayList()
         'clear the list box as it keeps the earlier loop
@@ -203,5 +205,28 @@
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles txtDOB.ValueChanged
 
+    End Sub
+
+    Private Sub btnFindStud_Click(sender As Object, e As EventArgs) Handles btnFindStud.Click
+        If txtLastName.Text = "" Then
+            MsgBox("Please add a 'Last Name' to be searched", MsgBoxStyle.Exclamation, "Add search name to 'Last Name'.")
+            Exit Sub
+        End If
+        Dim foundName = False
+        Dim searchCount As Integer = 0
+        While searchCount < studentCount And foundName = False
+            If students(searchCount).lastname = txtLastName.Text Then
+                foundName = True
+            Else
+                searchCount = searchCount + 1
+            End If
+        End While
+        If foundName Then
+            lstStud.Items.Add("Your student is " & students(searchCount).firstname &
+                              " - " & students(searchCount).lastname & " - " & students(searchCount).DOB &
+                              " - " & students(searchCount).gender & " - " & students(searchCount).avMk & ".")
+        Else
+            lstStud.Items.Add("This student cannot be found! ")
+        End If
     End Sub
 End Class
