@@ -27,7 +27,7 @@ table {
 
 tr, th, td {
     color: #DDDDDD;
-    border: 1px solid #DDDDDD;
+    border: 1px groove #DDDDDD;
     font-family: Arial, Helvetica, sans-serif;
 }
 
