@@ -2,12 +2,20 @@
     background-color: #333333;
 }
 
+div {
+    padding: 0px;
+    border: 3px solid #DDDDDD;
+    background-color: #ddbf00;
+    margin: auto;
+    width: 40%;
+}
+
 h1, p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
-    color: #DDDDDD;
+    color: #333333;
     text-align: center;
 }
 
