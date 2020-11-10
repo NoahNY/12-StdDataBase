@@ -94,7 +94,7 @@
             Exit Sub
         End If
 
-        If Not IsNumeric(txtAvMk.Text) Then
+        If Not IsNumeric(txtAvMk.Text) Or (txtAvMk.Text) > 100 Or (txtAvMk.Text) < 0 Then
             MsgBox("Please enter an 'average mark' (between 0-100).", MsgBoxStyle.Exclamation, "Go to the Average Mark field and input a mark, please!")
             txtAvMk.Focus()
             Exit Sub
