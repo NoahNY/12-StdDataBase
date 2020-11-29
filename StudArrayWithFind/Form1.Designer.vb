@@ -42,7 +42,7 @@ Partial Class Form1
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnFindStud = New System.Windows.Forms.Button()
-        Me.txtTestItem = New System.Windows.Forms.TextBox()
+        Me.txtFoundResult = New System.Windows.Forms.TextBox()
         Me.txtTestIndex = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -224,10 +224,10 @@ Partial Class Form1
         '
         'txtTestItem
         '
-        Me.txtTestItem.Location = New System.Drawing.Point(36, 152)
-        Me.txtTestItem.Name = "txtTestItem"
-        Me.txtTestItem.Size = New System.Drawing.Size(309, 20)
-        Me.txtTestItem.TabIndex = 7
+        Me.txtFoundResult.Location = New System.Drawing.Point(36, 152)
+        Me.txtFoundResult.Name = "txtTestItem"
+        Me.txtFoundResult.Size = New System.Drawing.Size(309, 20)
+        Me.txtFoundResult.TabIndex = 7
         '
         'txtTestIndex
         '
@@ -260,7 +260,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtTestIndex)
-        Me.Controls.Add(Me.txtTestItem)
+        Me.Controls.Add(Me.txtFoundResult)
         Me.Controls.Add(Me.btnFindStud)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -282,7 +282,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
         Me.Name = "Form1"
-        Me.Text = "v2.0.2 Student Entry Form - tests for List Box actions"
+        Me.Text = "v2.0.3 Student Entry Form - tests for List Box actions"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -310,7 +310,7 @@ Partial Class Form1
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents btnFindStud As Button
-    Friend WithEvents txtTestItem As TextBox
+    Friend WithEvents txtFoundResult As TextBox
     Friend WithEvents txtTestIndex As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label

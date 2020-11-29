@@ -9,7 +9,8 @@
         Public phoneNo As String
         Public paid As Boolean
     End Class
-    Dim students(20) As STUDENT
+
+    ReadOnly students(20) As STUDENT
     Dim studentCount As Integer = 0
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -202,7 +203,7 @@
     End Sub
 
     Private Sub lstStud_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstStud.SelectedIndexChanged
-        txtTestItem.Text = lstStud.SelectedItem
+        txtFoundResult.Text = lstStud.SelectedItem
         txtTestIndex.Text = lstStud.SelectedIndex
     End Sub
 
@@ -273,19 +274,22 @@
     Private Sub btnFindStud_Click(sender As Object, e As EventArgs) Handles btnFindStud.Click
         If txtLastName.Text = "" Then
             MsgBox("Please add a 'Last Name' to be searched", MsgBoxStyle.Exclamation, "Add search name to 'Last Name'.")
+            lstStud.ClearSelected()
             Exit Sub
         End If
-        Dim foundName = False
+        Dim strFind As String
+        Dim strRecord As String
+        Dim boolfoundStud = False
         Dim searchCount As Integer = 0
-        While searchCount < studentCount And foundName = False
+        While searchCount < studentCount And boolfoundStud = False
             If students(searchCount).lastname = txtLastName.Text Then
-                foundName = True
+                boolfoundStud = True
                 lstStud.SelectedIndex = searchCount
             Else
-                searchCount = searchCount + 1
+                searchCount += 1
             End If
         End While
-        If foundName Then
+        If boolfoundStud Then
             lstStud.Items.Add("Your student is " & students(searchCount).firstname &
                               " - " & students(searchCount).lastname & " - " & students(searchCount).DOB &
                               " - " & students(searchCount).gender & " - " & students(searchCount).avMk & ".")
@@ -302,7 +306,7 @@
 
     End Sub
 
-    Private Sub txtTestItem_TextChanged(sender As Object, e As EventArgs) Handles txtTestItem.TextChanged
+    Private Sub txtTestItem_TextChanged(sender As Object, e As EventArgs) Handles txtFoundResult.TextChanged
 
     End Sub
 
