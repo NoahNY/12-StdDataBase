@@ -22,7 +22,6 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -43,11 +42,15 @@ Partial Class Form1
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnFindStud = New System.Windows.Forms.Button()
+        Me.txtTestItem = New System.Windows.Forms.TextBox()
+        Me.txtTestIndex = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(36, 83)
+        Me.txtFirstName.Location = New System.Drawing.Point(36, 54)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(100, 20)
         Me.txtFirstName.TabIndex = 0
@@ -55,16 +58,17 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(36, 35)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(36, 6)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(107, 13)
+        Me.Label1.Size = New System.Drawing.Size(183, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Enter Student Details"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(36, 64)
+        Me.Label2.Location = New System.Drawing.Point(36, 35)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 13)
         Me.Label2.TabIndex = 2
@@ -73,7 +77,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(142, 64)
+        Me.Label3.Location = New System.Drawing.Point(142, 35)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(58, 13)
         Me.Label3.TabIndex = 4
@@ -81,7 +85,7 @@ Partial Class Form1
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(142, 83)
+        Me.txtLastName.Location = New System.Drawing.Point(142, 54)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(100, 20)
         Me.txtLastName.TabIndex = 1
@@ -89,7 +93,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(248, 64)
+        Me.Label4.Location = New System.Drawing.Point(248, 35)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 6
@@ -98,7 +102,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(36, 128)
+        Me.Label5.Location = New System.Drawing.Point(36, 94)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 8
@@ -106,7 +110,7 @@ Partial Class Form1
         '
         'txtGender
         '
-        Me.txtGender.Location = New System.Drawing.Point(36, 144)
+        Me.txtGender.Location = New System.Drawing.Point(36, 110)
         Me.txtGender.Name = "txtGender"
         Me.txtGender.Size = New System.Drawing.Size(100, 20)
         Me.txtGender.TabIndex = 3
@@ -114,7 +118,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(142, 128)
+        Me.Label6.Location = New System.Drawing.Point(142, 94)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(40, 13)
         Me.Label6.TabIndex = 10
@@ -122,17 +126,17 @@ Partial Class Form1
         '
         'txtAvMk
         '
-        Me.txtAvMk.Location = New System.Drawing.Point(142, 144)
+        Me.txtAvMk.Location = New System.Drawing.Point(142, 110)
         Me.txtAvMk.Name = "txtAvMk"
         Me.txtAvMk.Size = New System.Drawing.Size(100, 20)
         Me.txtAvMk.TabIndex = 4
         '
         'btnAddStud
         '
-        Me.btnAddStud.Location = New System.Drawing.Point(469, 123)
+        Me.btnAddStud.Location = New System.Drawing.Point(469, 106)
         Me.btnAddStud.Name = "btnAddStud"
         Me.btnAddStud.Size = New System.Drawing.Size(100, 23)
-        Me.btnAddStud.TabIndex = 7
+        Me.btnAddStud.TabIndex = 9
         Me.btnAddStud.Text = "Add Student"
         Me.btnAddStud.UseVisualStyleBackColor = True
         '
@@ -147,7 +151,7 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(39, 183)
+        Me.Label8.Location = New System.Drawing.Point(36, 186)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(172, 13)
         Me.Label8.TabIndex = 16
@@ -155,7 +159,7 @@ Partial Class Form1
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(248, 144)
+        Me.txtPhone.Location = New System.Drawing.Point(248, 110)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(100, 20)
         Me.txtPhone.TabIndex = 5
@@ -165,7 +169,7 @@ Partial Class Form1
         Me.chkPaid.AutoSize = True
         Me.chkPaid.Checked = True
         Me.chkPaid.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkPaid.Location = New System.Drawing.Point(384, 146)
+        Me.chkPaid.Location = New System.Drawing.Point(401, 110)
         Me.chkPaid.Name = "chkPaid"
         Me.chkPaid.Size = New System.Drawing.Size(47, 17)
         Me.chkPaid.TabIndex = 6
@@ -175,7 +179,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(248, 128)
+        Me.Label7.Location = New System.Drawing.Point(248, 94)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(78, 13)
         Me.Label7.TabIndex = 17
@@ -183,7 +187,7 @@ Partial Class Form1
         '
         'txtDOB
         '
-        Me.txtDOB.Location = New System.Drawing.Point(248, 83)
+        Me.txtDOB.Location = New System.Drawing.Point(248, 54)
         Me.txtDOB.MaxDate = New Date(2020, 11, 9, 0, 0, 0, 0)
         Me.txtDOB.MinDate = New Date(1960, 1, 1, 0, 0, 0, 0)
         Me.txtDOB.Name = "txtDOB"
@@ -194,7 +198,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(248, 51)
+        Me.Label9.Location = New System.Drawing.Point(248, 22)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(66, 13)
         Me.Label9.TabIndex = 20
@@ -203,7 +207,7 @@ Partial Class Form1
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(36, 115)
+        Me.Label10.Location = New System.Drawing.Point(36, 81)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(181, 13)
         Me.Label10.TabIndex = 21
@@ -211,19 +215,52 @@ Partial Class Form1
         '
         'btnFindStud
         '
-        Me.btnFindStud.Location = New System.Drawing.Point(469, 152)
+        Me.btnFindStud.Location = New System.Drawing.Point(454, 150)
         Me.btnFindStud.Name = "btnFindStud"
-        Me.btnFindStud.Size = New System.Drawing.Size(100, 23)
-        Me.btnFindStud.TabIndex = 12
-        Me.btnFindStud.Text = "Find Student"
+        Me.btnFindStud.Size = New System.Drawing.Size(145, 23)
+        Me.btnFindStud.TabIndex = 10
+        Me.btnFindStud.Text = "Find Student by Surname"
         Me.btnFindStud.UseVisualStyleBackColor = True
+        '
+        'txtTestItem
+        '
+        Me.txtTestItem.Location = New System.Drawing.Point(36, 152)
+        Me.txtTestItem.Name = "txtTestItem"
+        Me.txtTestItem.Size = New System.Drawing.Size(309, 20)
+        Me.txtTestItem.TabIndex = 7
+        '
+        'txtTestIndex
+        '
+        Me.txtTestIndex.Location = New System.Drawing.Point(351, 152)
+        Me.txtTestIndex.Name = "txtTestIndex"
+        Me.txtTestIndex.Size = New System.Drawing.Size(100, 20)
+        Me.txtTestIndex.TabIndex = 8
+        '
+        'Label11
+        '
+        Me.Label11.Location = New System.Drawing.Point(36, 137)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(195, 13)
+        Me.Label11.TabIndex = 0
+        Me.Label11.Text = "Test field for selected element in list box"
+        '
+        'Label12
+        '
+        Me.Label12.Location = New System.Drawing.Point(352, 137)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(78, 13)
+        Me.Label12.TabIndex = 22
+        Me.Label12.Text = "Element Index"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.txtTestIndex)
+        Me.Controls.Add(Me.txtTestItem)
         Me.Controls.Add(Me.btnFindStud)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -245,7 +282,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
         Me.Name = "Form1"
-        Me.Text = "v2.0.1 Student Entry Form (Find Student Button)"
+        Me.Text = "v2.0.2 Student Entry Form - tests for List Box actions"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -273,4 +310,8 @@ Partial Class Form1
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents btnFindStud As Button
+    Friend WithEvents txtTestItem As TextBox
+    Friend WithEvents txtTestIndex As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
 End Class
