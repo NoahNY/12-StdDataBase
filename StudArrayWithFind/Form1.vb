@@ -113,7 +113,7 @@
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
         'VALIDATION:'
         'Validate if anything has been inputted in the "First Name" box:'
-        If txtFirstName.Text = "" Then
+        If txtFirstName.Text = "" Or IsNumeric(txtFirstName.Text) Then
             MsgBox("Please enter a 'first name'.", MsgBoxStyle.Exclamation, "Go to the First Name field and input a name, please!")
             txtFirstName.Focus()
             Exit Sub
@@ -128,7 +128,7 @@
 
 
         'Validate if anything has been inputted in the "Last Name" box:'
-        If txtLastName.Text = "" Then
+        If txtLastName.Text = "" Or IsNumeric(txtLastName.Text) Then
             MsgBox("Please enter a 'last name'.", MsgBoxStyle.Exclamation, "Go to the Last Name field and input a name, please!")
             txtLastName.Focus()
             Exit Sub
@@ -149,8 +149,8 @@
         End If
 
         'Validate that the gender field holds "m" of "f":'
-        If Not (LCase(txtGender.Text) = "m" Or LCase(txtGender.Text) = "f") Then
-            MsgBox("Please enter 'f' or 'm' ", MsgBoxStyle.Exclamation, "Check Gender field")
+        If (txtGender.Text) = "" Then
+            MsgBox("Please select gender!", MsgBoxStyle.Exclamation, "Check Gender field")
             txtGender.Focus()
             Exit Sub
         End If
@@ -223,7 +223,7 @@
 
     End Sub
 
-    Private Sub txtGender_TextChanged(sender As Object, e As EventArgs) Handles txtGender.TextChanged
+    Private Sub txtGender_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -312,5 +312,12 @@
 
     Private Sub txtTestIndex_TextChanged(sender As Object, e As EventArgs) Handles txtTestIndex.TextChanged
 
+    End Sub
+
+    Private Sub txtGender_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txtGender.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub txtGender_TextChanged_1(sender As Object, e As EventArgs)
     End Sub
 End Class

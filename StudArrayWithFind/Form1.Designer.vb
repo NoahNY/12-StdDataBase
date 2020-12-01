@@ -29,7 +29,6 @@ Partial Class Form1
         Me.txtLastName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtGender = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtAvMk = New System.Windows.Forms.TextBox()
         Me.btnAddStud = New System.Windows.Forms.Button()
@@ -46,6 +45,8 @@ Partial Class Form1
         Me.txtTestIndex = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtGender = New System.Windows.Forms.ComboBox()
+        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -107,13 +108,6 @@ Partial Class Form1
         Me.Label5.Size = New System.Drawing.Size(47, 13)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "('m' or 'f')"
-        '
-        'txtGender
-        '
-        Me.txtGender.Location = New System.Drawing.Point(36, 110)
-        Me.txtGender.Name = "txtGender"
-        Me.txtGender.Size = New System.Drawing.Size(100, 20)
-        Me.txtGender.TabIndex = 3
         '
         'Label6
         '
@@ -222,10 +216,10 @@ Partial Class Form1
         Me.btnFindStud.Text = "Find Student by Surname"
         Me.btnFindStud.UseVisualStyleBackColor = True
         '
-        'txtTestItem
+        'txtFoundResult
         '
         Me.txtFoundResult.Location = New System.Drawing.Point(36, 152)
-        Me.txtFoundResult.Name = "txtTestItem"
+        Me.txtFoundResult.Name = "txtFoundResult"
         Me.txtFoundResult.Size = New System.Drawing.Size(309, 20)
         Me.txtFoundResult.TabIndex = 7
         '
@@ -252,11 +246,21 @@ Partial Class Form1
         Me.Label12.TabIndex = 22
         Me.Label12.Text = "Element Index"
         '
+        'txtGender
+        '
+        Me.txtGender.FormattingEnabled = True
+        Me.txtGender.Items.AddRange(New Object() {"Male", "Female", "Other"})
+        Me.txtGender.Location = New System.Drawing.Point(36, 109)
+        Me.txtGender.Name = "txtGender"
+        Me.txtGender.Size = New System.Drawing.Size(100, 21)
+        Me.txtGender.TabIndex = 23
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtTestIndex)
@@ -274,7 +278,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtAvMk)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtLastName)
@@ -282,7 +285,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
         Me.Name = "Form1"
-        Me.Text = "v2.0.3 Student Entry Form - tests for List Box actions"
+        Me.Text = "v2.0.4 Student Entry Form - Improved validation"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -295,7 +298,6 @@ Partial Class Form1
     Friend WithEvents txtLastName As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtGender As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtAvMk As TextBox
     Friend WithEvents btnAddStud As Button
@@ -314,4 +316,6 @@ Partial Class Form1
     Friend WithEvents txtTestIndex As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents txtGender As ComboBox
+    Friend WithEvents ColorDialog1 As ColorDialog
 End Class
